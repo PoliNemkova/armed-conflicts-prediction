@@ -1,0 +1,40 @@
+<html>
+    <head>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <link rel='stylesheet' href="{{ url_for('static', filename='font-awesome-4.7.0/css/font-awesome.min.css')}}">
+        <link rel='stylesheet' href="{{ url_for('static', filename='css/home.css')}}">
+    </head>
+
+    <body>
+        <h1>Africa Military Conflict Predictor</h1>
+
+        <form action="/economic_two_thousand" method="post" enctype="multipart/form-data">
+            <input type="submit" class="btn btn-light" name="economic_two_thousand" value="The effect of economic factors on the start of new conflicts in the Year 2000">
+        </form>
+
+        <form action="/economic_twenty_new" method="post" enctype="multipart/form-data">
+            <input type="submit" class="btn btn-light" name="economic_twenty_new" value="The effect of economic factors on the start of new conflicts From 1997 to 2018">
+        </form>
+
+        <form action="/ethnicity_two_thousand" method="post" enctype="multipart/form-data">
+            <input type="submit" class="btn btn-light" name="ethnicity_two_thousand" value="The effect of ethnicity and religion on the start of new conflicts in the Year 2000">
+        </form>
+
+        <form action="/ethnicity_twenty" method="post" enctype="multipart/form-data">
+            <input type="submit" class="btn btn-light" name="ethnicity_twenty" value="The effect of ethnicity and religion on the start of new conflicts From 1997 to 2018">
+        </form>
+        
+        {% if name %}
+        <h2>{{name}}</h2>
+        <img src={{url}} alt="Chart" width="400" height="auto">
+        {% endif %}
+    </body>
+</html>
